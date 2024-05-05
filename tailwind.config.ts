@@ -18,6 +18,14 @@ const config = {
       },
     },
     extend: {
+      colors: {
+        customDark: "#0B0B0F",
+        primary: "#B982FF",
+        subtitle: "#898CA9"
+      },
+      backgroundImage: {
+         "stars": "url(/images/hero_2.png)"
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

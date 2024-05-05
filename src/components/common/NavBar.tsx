@@ -1,11 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import MainButton from "./MainButton";
 
 function NavBar() {
   const [menu, setMenu] = useState(false);
+  const links = ["Buy / Sell", "Grow", "Markets", "Business", "Support"];
   const toggleMenu = () => {
     setMenu(!menu);
   };
@@ -13,51 +15,54 @@ function NavBar() {
   return (
     <div className="md:sticky md:top-0   md:shadow-none z-20 ">
       {/* DESKTOP */}
-      <div className=" hidden lg:block animate-in fade-in zoom-in bg-white p-4">
+      <div className=" hidden lg:block animate-in fade-in zoom-in bg-transparent p-4">
         <div className="flex justify-between mx-[41px] items-center">
           <div>
-            <img src="/svgs/sf_logo.svg" alt="logo" />
+            <img src="/images/logo.svg" alt="logo" />
           </div>
           <div className="flex gap-[20px] xl:gap-[50px] text-[16px] items-center select-none">
-            <p
-              className={`hover:text-primary cursor-pointer flex items-center gap-2  font-[500] text-gray`}
-            >
-              Link1
-            </p>
-            {/* Add more links here */}
+            {links.map((link, index) => (
+              <p
+                className={`hover:text-primary cursor-pointer flex items-center gap-2  font-[500] text-white`}
+                key={index}
+              >
+                {link}
+              </p>
+            ))}
           </div>
-          <div className="flex items-center gap-[40px] select-none">
-            <Link
-              href="/auth/login"
-              className="hover:text-primary cursor-pointer flex items-center gap-2 "
-            >
-              Sign in
-            </Link>
+          <div className="flex items-center gap-[12px] select-none">
+            <MainButton
+              text={"Sign in"}
+              classes="bg-transparent  hover:bg-transparent border-[2px] border-white rounded-[10px] font-semibold w-[96px] h-[40px]"
+            />
+            <MainButton
+              text={"Sign up"}
+              classes="primary-gradient border-gradient rounded-[10px] font-semibold w-[96px] h-[40px]"
+            />
           </div>
         </div>
       </div>
       {/* MOBILE */}
       <div
-        className={` block lg:hidden shadow-sm  fixed top-0 w-full z-[999] bg-white py-4 animate-in fade-in zoom-in  ${
-          menu ? " bg-primary py-2" : ""
+        className={` block lg:hidden shadow-sm  fixed top-0 w-full z-[999] bg-customDark py-4 animate-in fade-in zoom-in  ${
+          menu ? " bg-customDark py-2" : ""
         } `}
       >
         <div className="flex justify-between mx-[10px]">
           <div className="flex gap-[50px] text-[16px] items-center select-none">
-            <img src="/svgs/sf_logo.svg" alt="logo" className="w-[7rem]" />
+            <img src="/images/logo.svg" alt="logo" className="w-[7rem]" />
           </div>
           <div className="flex items-center gap-[40px]">
             {menu ? (
               <X
-                className="cursor-pointer animate-in fade-in zoom-in text-black"
+                className="cursor-pointer animate-in fade-in zoom-in text-white"
                 onClick={toggleMenu}
               />
             ) : (
-              <img
-                src="/svgs/hamburger.svg"
-                alt="logo"
+              <Menu
                 className="cursor-pointer animate-in fade-in zoom-in"
                 onClick={toggleMenu}
+                color="#fff"
               />
             )}
           </div>
@@ -65,15 +70,23 @@ function NavBar() {
         {menu ? (
           <div className="my-8 select-none animate-in slide-in-from-right">
             <div className="flex flex-col gap-8 mt-8 mx-4">
-              <p className="text-black cursor-pointer">
-                <span>How it works</span>
-              </p>
-              {/* Add more links here */}
-
-              <div className="flex flex-col gap-[40px] select-none">
-                <Link href="/auth/login" className="text-black cursor-pointer">
-                  Signin
-                </Link>
+              {links.map((link, index) => (
+                <p
+                  className={`hover:text-white cursor-pointer flex items-center gap-2  font-[500] text-white`}
+                  key={index}
+                >
+                  {link}
+                </p>
+              ))}
+              <div className="flex flex-col gap-[12px] select-none">
+                <MainButton
+                  text={"Sign in"}
+                  classes="bg-transparent hover:bg-transparent border-[2px] border-white rounded-[10px] font-semibold w-[96px] h-[40px]"
+                />
+                <MainButton
+                  text={"Sign up"}
+                  classes="primary-gradient border-gradient rounded-[10px] font-semibold w-[96px] h-[40px]"
+                />
               </div>
             </div>
           </div>
