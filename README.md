@@ -10,7 +10,8 @@ Coinflip website built with Next14, Shadcn, Aceternity, Framer motion and Tailwi
 https://crypto-currency-platform.vercel.app/
 
 Figma:  
-https://www.figma.com/file/8W0XMxuxrUP0OKCaTsHRF6/awwwards.com-Redesign---Free-(Community)-(Copy)?type=design&mode=design&t=FaYBBAMgrcbNtj8M-0
+https://www.figma.com/file/WsZ6vcbF4HdPW79EcOpcZk/Cryptocurrency-Landing-Page-(Community)-(Copy)?type=design&node-id=0-1&mode=design&t=eq56XJbzP5j678ES-0
+
 
 # ⛏️ Installation
 To follow along the tutorial. Change to the starter branch  after cloning the repo.
