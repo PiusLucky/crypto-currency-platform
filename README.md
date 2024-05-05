@@ -4,7 +4,7 @@ Coinflip website built with Next14, Shadcn, Framer motion and Tailwind.
 ![crypto-thumbnail](https://github.com/PiusLucky/crypto-currency-platform/assets/32282934/9b18a1ba-fa93-4664-83b3-db70570deb10)
 
 # Youtube
-
+https://youtu.be/GNMeDlgfQH0
 
 # ☁️ Deployed link
 https://crypto-currency-platform.vercel.app/
